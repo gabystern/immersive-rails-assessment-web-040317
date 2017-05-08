@@ -1,0 +1,6 @@
+<%= form_for @appearance, url: appearances_new_path do |f| %>
+Guest: <%= f.select :guest_id, Guest.all.collect { |g| [ g.name, g.id ] }, include_blank: true %>
+Episode: <%= f.select :episode_id, Episode.all.collect { |e| [ e.number, e.id ] }, include_blank: true %>
+Rating: <%= f.number_field :rating, min: 1, max: 5 %>
+<%= f.submit %>
+<% end %>

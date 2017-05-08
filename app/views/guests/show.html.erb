@@ -1,0 +1,14 @@
+Guest Name: <%= @guest.name %> <br>
+Occupation: <%= @guest.occupation %> <br>
+Episodes:
+<ul>
+<% @guest.episodes.each do |episode| %>
+  <li><%= episode.number %></li>
+<% end %>
+</ul>
+Appearance Ratings:
+<ul>
+<% @guest.appearances.each do |appearance| %>
+  <li><%= link_to appearance.rating, appearance_path(appearance) %></li>
+<% end %>
+</ul>
